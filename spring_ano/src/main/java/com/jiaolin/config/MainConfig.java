@@ -1,11 +1,8 @@
 package com.jiaolin.config;
 
 import com.jiaolin.bean.Person;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.*;
 import org.springframework.context.annotation.ComponentScan.Filter;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -25,6 +22,7 @@ import org.springframework.stereotype.Controller;
         })
 public class MainConfig {
 
+    @Scope
     @Bean("person")
     public Person person2() {
         return new Person("zs", 22);
