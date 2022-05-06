@@ -29,6 +29,18 @@ public class IocTest {
         System.out.println("ioc容器创建完成....");
         Object person = applicationContext.getBean("person");
         Object person2 = applicationContext.getBean("person");
-//        System.out.println(person == person2);
+        System.out.println(person == person2);
     }
+
+    @Test
+    public void test3() {
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
+        String[] names = applicationContext.getBeanDefinitionNames();
+        for (String name : names) {
+            System.out.println(name);
+        }
+
+
+    }
+
 }
