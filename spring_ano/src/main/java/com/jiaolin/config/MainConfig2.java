@@ -1,11 +1,14 @@
 package com.jiaolin.config;
 
+import com.jiaolin.bean.Color;
 import com.jiaolin.bean.Person;
+import com.jiaolin.bean.Red;
 import com.jiaolin.condition.LinuxCondition;
 import com.jiaolin.condition.WindowsCondition;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
 /**
  * @author johnny
@@ -14,6 +17,7 @@ import org.springframework.context.annotation.Configuration;
  * @Date 2022/5/6 10:10
  */
 @Configuration
+@Import({Red.class, Color.class})
 public class MainConfig2 {
 
     /**
@@ -56,6 +60,7 @@ public class MainConfig2 {
     public Person person4() {
         return new Person("linux", 50);
     }
+
 
 
 }
