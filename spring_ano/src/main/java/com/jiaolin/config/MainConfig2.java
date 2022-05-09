@@ -4,6 +4,7 @@ import com.jiaolin.bean.Color;
 import com.jiaolin.bean.Person;
 import com.jiaolin.bean.Red;
 import com.jiaolin.condition.LinuxCondition;
+import com.jiaolin.condition.MyImportBeanDefinitionRegistrar;
 import com.jiaolin.condition.MyImportSelector;
 import com.jiaolin.condition.WindowsCondition;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +19,7 @@ import org.springframework.context.annotation.Import;
  * @Date 2022/5/6 10:10
  */
 @Configuration
-@Import({Red.class, Color.class, MyImportSelector.class})
+@Import({Red.class, Color.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
 public class MainConfig2 {
 
     /**

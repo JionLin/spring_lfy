@@ -65,5 +65,10 @@ public class IocTest {
         print(applicationContext);
     }
 
+  @Test
+    public void testImportBeanDefinitionRegistrar() {
+        print(applicationContext);
+    }
+
 
 }
