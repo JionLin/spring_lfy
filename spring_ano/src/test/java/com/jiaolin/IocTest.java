@@ -51,6 +51,19 @@ public class IocTest {
         }
     }
 
+    AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
+
+    public void print(AnnotationConfigApplicationContext applicationContext) {
+        String[] names = applicationContext.getBeanDefinitionNames();
+        for (String name : names) {
+            System.out.println(name);
+        }
+    }
+
+    @Test
+    public void testBeanImportSelector() {
+        print(applicationContext);
+    }
 
 
 }
