@@ -1,6 +1,7 @@
 package com.jiaolin.config;
 
 import com.jiaolin.bean.Color;
+import com.jiaolin.bean.ColorFactoryBean;
 import com.jiaolin.bean.Person;
 import com.jiaolin.bean.Red;
 import com.jiaolin.condition.LinuxCondition;
@@ -15,7 +16,14 @@ import org.springframework.context.annotation.Import;
 /**
  * @author johnny
  * @Classname MainConfig
- * @Description
+ * @Description 给容器中注册组件,四种方式
+ * 1.  包扫描+组件标注注解 (controller+service+repository)
+ * 2.   Bean【导入第三方包第组件】
+ * 3.   @import[快速给容器中导入一组件]
+ *          @import 要导入到容器中到组件
+ *          @importSelector  返回需要导入到组件到全类名数组
+ *          @importBeanDefinitionRegister 手动注册bean到容器中
+ *4.
  * @Date 2022/5/6 10:10
  */
 @Configuration
@@ -64,5 +72,9 @@ public class MainConfig2 {
     }
 
 
+    @Bean
+    public ColorFactoryBean colorFactoryBean(){
+        return new ColorFactoryBean();
+    }
 
 }

@@ -63,6 +63,14 @@ public class IocTest {
     @Test
     public void testBeanImportSelector() {
         print(applicationContext);
+
+        Object bean = applicationContext.getBean("colorFactoryBean");
+        Object bean2 = applicationContext.getBean("colorFactoryBean");
+        System.out.println("bean的类型\t"+bean.getClass());
+        System.out.println(bean==bean2);
+        Object bean3 = applicationContext.getBean("&colorFactoryBean");
+        System.out.println("bean3类型"+bean3.getClass());
+
     }
 
   @Test
