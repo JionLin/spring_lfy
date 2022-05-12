@@ -12,6 +12,9 @@ import org.springframework.context.annotation.Configuration;
  * 1. bean注解上面添加的方式进行
  * 2. 实现接口 InitializingBean DisposableBean ,重写里面的方法。
  * 3, 使用jsr250的@postConstruct 在bean创建完成,来初始化该方法。
+ * 4. 实现接口,BeanPostProcess bean后置处理器
+ *          postProcessBeforeInitialization bean 之前工作
+ *          postProcessAfterInitialization  bean  之后工作
  * @destroy 在容器销毁bean之前,来执行destory方法
  * @Date 2022/5/12 10:44
  */
