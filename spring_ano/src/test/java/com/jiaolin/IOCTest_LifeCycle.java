@@ -18,7 +18,7 @@ public class IOCTest_LifeCycle {
         System.out.println("容器创建完成");
 
 
-//        applicationContext.close();
+        applicationContext.close();
 
     }
 }

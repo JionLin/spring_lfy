@@ -1,4 +1,4 @@
-package com.jiaolin.bean;
+package com.jiaolin.bean.lifecycle;
 
 import org.springframework.stereotype.Component;
 
