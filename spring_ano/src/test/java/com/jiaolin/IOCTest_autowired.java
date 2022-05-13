@@ -1,5 +1,8 @@
 package com.jiaolin;
 
+import com.jiaolin.bean.autowired.Boss;
+import com.jiaolin.bean.autowired.Fruit;
+import com.jiaolin.bean.autowired.Wifi;
 import com.jiaolin.config.MainConfigOfAutowired;
 import com.jiaolin.dao.HelloDao;
 import org.junit.Test;
@@ -26,6 +29,14 @@ public class IOCTest_autowired {
         System.out.println(helloDao);
 //        HelloService helloService = applicationContext.getBean(HelloService.class);
 //        System.out.println(helloService);
+
+        Boss boss = applicationContext.getBean(Boss.class);
+        System.out.println(boss);
+        Fruit fruit = applicationContext.getBean(Fruit.class);
+        System.out.println(fruit);
+
+        Wifi wifi = applicationContext.getBean(Wifi.class);
+        System.out.println(wifi);
 
     }
 }

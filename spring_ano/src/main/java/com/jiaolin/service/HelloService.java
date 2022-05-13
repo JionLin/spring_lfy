@@ -1,9 +1,8 @@
 package com.jiaolin.service;
 
 import com.jiaolin.dao.HelloDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.inject.Inject;
 
 /**
  * @author johnny
@@ -15,9 +14,9 @@ import javax.inject.Inject;
 public class HelloService {
 
 //    @Qualifier("helloDao")
-//    @Autowired
+    @Autowired
 //    @Resource
-    @Inject
+//    @Inject
     private HelloDao helloDao;
 
     public void print(){
