@@ -1,0 +1,13 @@
+logging:
+  level: debug
+
+spring:
+  mail:
+    username: 250912986@qq.com
+    password: yauhtsrrxuetbgca
+    host: smtp.qq.com
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
