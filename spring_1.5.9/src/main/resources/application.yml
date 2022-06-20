@@ -1,0 +1,75 @@
+person:
+#  age: 18
+  boss: true
+  birth: 2017/12/12
+  last-name: johnny
+  dog:
+    age: 2
+    name: tom
+  maps: {k1: v1,k2: v2}
+  lists:
+    - lisi
+    - wangwu
+
+
+spring:
+  profiles:
+    active: test
+  datasource:
+    password: root
+    username: root
+    url: jdbc:mysql://localhost:3306/johnny
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+#    schema:
+#      - classpath:dep.sql
+    #   数据源其他配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    #   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  config-location: classpath:mybatis/mybatis-config.xml
+
+jiaolin:
+  prefix: hello
+  suffix: nihao
+---
+server:
+  port: 8080
+spring:
+  profiles: dev
+---
+spring:
+  profiles: test
+server:
+  port: 8081
+
+
+#logging:
+#  level:
+#    com:
+#      jiaolin:
+#        boot: debug
+##    pattern:
+#  #    console:  %d{yyyy-MM-dd} [%thread] %-5level %logger{50} - %msg%n
+#  #    file:  %d{yyyy-MM-dd} === [%thread] === %-5level === %logger{50} ==== %msg%n
+#  #        指定日志到文件以及文件到地址。
+#  #  file: /Users/johnny/logs/boot.log
+#  #  指定日志文件的路径,默认文件名为spring.log
+#  path: /Users/johnny/logs
+
+
